@@ -4,3 +4,10 @@ h1  {
 .panel-footer {
   text-align: center;
 }
+body{
+  background-color: pink
+}
+#center {
+  align-content: center;
+
+}
