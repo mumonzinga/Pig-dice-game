@@ -23,75 +23,74 @@ Turn.prototype.diceRoller = function(player1, player2) {
   };
 };
 
-var player =  {
-  rno: function (number) {
-    this.number = number;
+var player1 = {};
+var player2 = {};
+
+var dice = 0;
+var totalScore= 0;
+var roll = function(){
+  dice = Math.floor(Math.random()*6) + 1;
+  if (dice != 1){
+    totalScore += dice
+  } else {
+    totalScore = 0;
+    change();
   }
-  addp: function (points) {
-    this.score += points;
-  }
-};
-var Turn ={
-  points: 0
-  aplayer: function (player) {
-    this.player = player;
-
-  }
-  roll function () {
-    die = Object.create(Die);
-    roll = die.roll();
-    if (roll === 1) {
-      this.over = true;
-      this.points = 0;
-    } else {
-      this.points += roll;
-    }
-    return roll;
-  }
-  hold function () {
-    this.player.addp();
-    this.over = true;
-  }
-};
-
-Die = {
-  roll function () {
-    return Math.ceil(Math.random()*6);
-  }
-
-};
-Play={
-
-}
-  }
-
-  }
-$("button#roll").click
-
-function dice(value) {
-  this.value = value;
-  this.roll = function(roll)  {
-
-  }
-  this.printDie = function (printDie) {
-  }
-
-
-
-}
-function () {
-  die = Math.ceil(Math.random()*6)+1;
-  return die;
-}
-
 }
 
 
-function printDie() {
-  this.roll();
+var winner = function(){
+  if (gOne.score >= 100){
+    alert( gOne.name + "  WINS ")
 
-  die1 = document.getElementById('die1');
-  die2 = document.getElementByTd('die2');
-  die1.innerHTML = die1.value;
-  die2.innerHTML = die2.value;
+     $("#roll").prop("disabled", true);
+     $("#hold").prop("disabled", true);
+  } else if (player.score >= 100){
+    alert("!!!" + gTwo.name + "  WINS !!!")
+
+    $("#roll").prop("disabled", true);
+    $("#hold").prop("disabled", true);
 }
+}
+
+function start(){
+  var fName=document.getElementById("one").value;
+  var sName=document.getElementById("two").value;
+  document.getElementById("gamerOne").innerHTML=fName;
+  document.getElementById("gamerTwo").innerHTML=sName;
+}
+
+
+//UI LOGIC
+$(document).ready(function(){
+  $(".entry").submit(function(event){
+    event.preventDefault();
+    var gOneName = $("#one").val();
+    var gTwoName = $("#two").val();
+    $("#gOne").text(playerOneName);
+    $("#gTwo").text(playerTwoName);
+    $(".print").hide();
+    $("#game").fadeIn();
+
+    $("button#dice").click(function(){
+      roll();
+      $("#round-total").text(totalScore);
+    })
+
+    $("button#hold").click(function(){
+      if (gOne.turn == "enabled") {
+        gOne.addScore();
+        $("#score-one").text(playerOneName.score);
+        winner();
+        change();
+      } else if (gTwo.turn == "enabled"){
+        gTwo.addScore();
+        $("#score-two").text(playerTwoName.score);
+        winner();
+        change();
+      }
+      totalScore = 0;
+      $("#round-total").text(roundTotal);
+    })
+  })
+});
