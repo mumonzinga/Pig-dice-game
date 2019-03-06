@@ -7,7 +7,7 @@
 **[Mumo Nzinga](https://github.com/mumonzinga)**
 ## Description
 This is an application that hosts pig-roll-dice-game.
-![website review](https://github.com/mumonzinga/Tracker-Triangle/blob/master/images/preview.png)
+![website review](https://github.com/mumonzinga/Pig-dice-game/blob/master/images/preview.png)
 ---
 ## Features
 -None
