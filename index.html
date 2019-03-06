@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/scripts.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="css/styles.css" rel ="stylesheet" type="text/css" media ="all">
+
+    <title>The-Pig-Dice-Game</title>
+
+  </head>
+
+  <body>
+    <div class="game-container">
+
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1>The Pig Dice Game</h1>
+        </div>
+      </div>
+      <form class="register">
+        <div class="output">
+          <p  id="nm">Enter your names on the spaces provided below<p/>
+            <input required id="one" class="form-control" type="text" name="player1" placeholder="Player One"><br>
+            <input required id="two" class="form-control" type="text" name="player2" placeholder="Player Two"><br>
+        </div>
+        <button type="submit" name="button" onclick="start()" id="start" class="btn bg-success">START</button>
+      </form>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="well">
+                <div id="g1">
+
+                  <h1>Player1</h1>
+                  <p><span id="gone"></span></p>
+                  <br>
+                  <p>CurrentScore:<span id="score-1"></span></p>
+                  <br>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+
+              <br>
+              <p>Round Total:<span id="round-total"></span></p>
+              <button type="button" id="dice" class="btn bg-danger" onclick="rolldice()">ROLL</button>
+              <button type="button" id="hold" class="btn bg-danger" onclick="hold()">HOLD</button>
+
+            </div>
+            <div class="col-md-4">
+              <div class="well">
+                <div id="g2">
+                  <h1>Player2</h1>
+                  <p><span id="gtwo"></span></p>
+                  <br>
+                  <p>CurrentScore:<span id="score-2"></span></p>
+                  <br>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </form>
+      <div class="container">
+        <div class="panel panel-default">
+          <div class="panel-footer">
+          <p>&#169; 2019 Legacysystems.com</p>
+        </div>
+      </div>
+
+    </div>
+  </body>
+
+</html>
